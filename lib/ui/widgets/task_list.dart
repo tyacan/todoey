@@ -15,6 +15,9 @@ class TaskList extends StatelessWidget {
               toggleCheck: (checkboxState) {
                 taskBrain.toggle(task);
               },
+              removeItem: () {
+                taskBrain.remove(index: index);
+              },
             );
           },
         );

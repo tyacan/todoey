@@ -16,6 +16,11 @@ class TaskBrain with ChangeNotifier, DiagnosticableTreeMixin {
     notifyListeners();
   }
 
+  void remove({int index}) {
+    _task.removeAt(index);
+    notifyListeners();
+  }
+
   void toggle(Task task) {
     task.toggleDone();
     notifyListeners();

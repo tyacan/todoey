@@ -4,8 +4,14 @@ class TaskItem extends StatelessWidget {
   final String title;
   final bool isDone;
   final Function toggleCheck;
+  final Function removeItem;
 
-  TaskItem({this.title, this.isDone, this.toggleCheck});
+  TaskItem({
+    this.title,
+    this.isDone,
+    this.toggleCheck,
+    this.removeItem,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +22,7 @@ class TaskItem extends StatelessWidget {
           decoration: isDone ? TextDecoration.lineThrough : null,
         ),
       ),
+      onLongPress: removeItem,
       trailing: Checkbox(
         value: isDone,
         onChanged: toggleCheck,
